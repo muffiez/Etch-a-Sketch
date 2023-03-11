@@ -1,4 +1,11 @@
 for(let i = 0; i < 256; i++) {
-var div = document.createElement("div");
-document.getElementById("container").appendChild(div);
+    const div = document.createElement("div");
+    div.className = "boxes";
+    document.getElementById("container").appendChild(div);
+    div.addEventListener('mouseover', () => {
+        div.classList.add('mouse-over');
+        });
 }
+
+
+
