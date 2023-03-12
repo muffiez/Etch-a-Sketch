@@ -6,14 +6,13 @@ const input = document.querySelector("#sizeSlider");
 const clearBtn = document.querySelector("#clear");
 const eraseBtn = document.querySelector("#erase");
 
-
 let currentColor = 'black'; 
 
 const mouseOverEvent = (e) => {
     const cell = e.target;
     switch (currentColor) {
         case 'black':
-            cell.style.backgroundColor = 'black';
+            cell.style.backgroundColor = 'black'
             break;
         case 'erase':
             cell.style.backgroundColor = 'white';
@@ -23,6 +22,9 @@ const mouseOverEvent = (e) => {
             const g = Math.floor(Math.random()*256);
             const b = Math.floor(Math.random()*256);
             cell.style.backgroundColor = `rgb(${r},${g},${b})`;
+            break;
+        case 'choice':
+            cell.style.backgroundColor = `${document.getElementById('colorpicker').value}`;
             break;
         default:
             throw new Error("color does not exist");
@@ -41,8 +43,6 @@ let setupGrid = (size) => {
     }
 }
 
-
-
 let clearGrid = () => {
     grid.innerHTML = ''
 }
@@ -51,10 +51,6 @@ let refresh = () => {
     setupGrid(size);
 }
 
-// const cells = document.querySelector("cells");
-// clearBtn.addEventListener('click', refresh());
-
-
 input.addEventListener("input", (e) => { 
     size = e.target.value;
     gridSize.innerHTML = `${size} x ${size}`;
@@ -62,22 +58,32 @@ input.addEventListener("input", (e) => {
     setupGrid(size);
 });
 
- 
+const clearBoard = () => {
+    const cells = document.getElementsByClassName("cells");
+    for(let i = 0; i < cells.length; i++) {
+        cells[i].style.backgroundColor = 'white';
+    }
+}
 
-
+let colorPicked = document.getElementById('colorpicker');
+colorPicked.addEventListener('input', () => {
+    currentColor = 'choice';
+});
 
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
-        const colorSelection = e.target.id;
-        console.log(colorSelection);
-        currentColor = colorSelection;
+        const buttonId = e.target.id;
+        if(buttonId == 'clear') {
+            clearBoard();
+        }
+        else {
+            currentColor = buttonId;
+        }
     });
 });
 
 window.onload = () => {
     setupGrid(DEFAULT_SIZE);
 }
-
-

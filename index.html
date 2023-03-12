@@ -14,8 +14,14 @@
         <div id="controls">
             <button id="black">Black</button>
             <button id="rgb">RGB</button>
-            <div id="gridSize">16 x 16</div>
-            <input id="sizeSlider" type="range" value="16" min="1" max="64" step="1"/>
+            <div class="choice">
+                 <label for="colorpicker">Choose Color:</label>
+                 <input type="color" id="colorpicker" value="#32CD32">
+            </div>
+            <div class="slider">
+                 <div id="gridSize">16 x 16</div>
+                 <input id="sizeSlider" type="range" value="16" min="1" max="64" step="1"/>
+            </div>
             <button id="erase">Erase</button>
             <button id="clear">Clear</button>
             
