@@ -60,15 +60,33 @@ input.addEventListener("input", (e) => {
 });
 
 const clearBoard = () => {
-    const cells = document.getElementsByClassName("cells");
-    for(let i = 0; i < cells.length; i++) {
-        cells[i].style.backgroundColor = 'white';
+    const cell = document.getElementsByClassName("cells");
+    for(let i = 0; i < cell.length; i++) {
+        cell[i].style.backgroundColor = 'white';
     }
 }
 
 let colorPicked = document.getElementById('colorpicker');
 colorPicked.addEventListener('input', () => {
     currentColor = 'choice';
+});
+
+let gridLines = document.getElementById('gridLine');
+gridLines.addEventListener('input', () => {
+    const cell = document.getElementsByClassName("cells");
+    if(gridLines.checked) {
+        
+            for (let i = 0; i < cell.length; i++) {
+                cell[i].setAttribute('style', 'border-width: 1px; border-style: solid; border-color: black; background-color: white;');
+            }
+    }
+    else {
+        for (let i = 0; i < cell.length; i++) {
+            cell[i].removeAttribute('style', 'border-width: 1px; border-style: solid; border-color: black;');
+            cell[i].style.backgroundColor = 'white';
+        }
+    }
+    
 });
 
 const buttons = document.querySelectorAll('button');

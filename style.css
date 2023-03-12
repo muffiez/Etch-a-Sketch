@@ -3,8 +3,8 @@
     align-items: center;
     gap: 30px;
     justify-content: space-evenly;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 #gridSize {
@@ -22,16 +22,13 @@
     grid-template-rows: repeat(16, 1fr);
     height: 700px;
     width: 700px;
-    /* border-width: 30px;
-    border-color: #EF0F0F;
-    border-style: solid; */
 }   
 
-#grid div {
+/* #grid div {
     border-width: 1px;
     border-style: solid;
     border-color: black;
-}
+} */
 
 
 body {
