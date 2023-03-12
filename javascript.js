@@ -52,11 +52,13 @@ let refresh = () => {
     setupGrid(size);
 }
 
+//resize slider 
 input.addEventListener("input", (e) => { 
     size = e.target.value;
     gridSize.innerHTML = `${size} x ${size}`;
     clearGrid();
     setupGrid(size);
+    checkGridStatus();
 });
 
 const clearBoard = () => {
@@ -73,14 +75,14 @@ colorPicked.addEventListener('input', () => {
     addHighlight(currentColor);
 });
 
-let gridLines = document.getElementById('gridLine');
-gridLines.addEventListener('input', () => {
+
+
+let checkGridStatus = () => {
     const cell = document.getElementsByClassName("cells");
-    if(gridLines.checked) {
-        
+        if(gridLines.checked) {
             for (let i = 0; i < cell.length; i++) {
                 cell[i].setAttribute('style', 'border-width: 1px; border-style: solid; border-color: black; background-color: white;');
-            }
+        }
     }
     else {
         for (let i = 0; i < cell.length; i++) {
@@ -88,8 +90,10 @@ gridLines.addEventListener('input', () => {
             cell[i].style.backgroundColor = 'white';
         }
     }
-    
-});
+}
+
+let gridLines = document.getElementById('gridLine');
+gridLines.addEventListener('input', checkGridStatus);
 
 const buttons = document.querySelectorAll('button');
 
