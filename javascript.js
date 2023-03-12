@@ -38,6 +38,7 @@ let setupGrid = (size) => {
     for(let i = 0; i < size*size; i++) {
         const cell = document.createElement("div");
         cell.className = "cells";
+        cell.style.backgroundColor = 'white'
         grid.appendChild(cell);
         cell.addEventListener('mouseover', mouseOverEvent)
     }

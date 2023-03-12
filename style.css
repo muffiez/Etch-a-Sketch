@@ -1,8 +1,10 @@
 #controls {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 30px;
     justify-content: space-evenly;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 #gridSize {
@@ -20,32 +22,45 @@
     grid-template-rows: repeat(16, 1fr);
     height: 700px;
     width: 700px;
+    /* border-width: 30px;
+    border-color: #EF0F0F;
+    border-style: solid; */
 }   
 
 #grid div {
     border-width: 1px;
     border-style: solid;
     border-color: black;
-    /* padding: 30px; */
 }
 
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #00C0FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #container {
+    margin-top: 30px;
     display: flex;
-    justify-content: center;
-    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 950px;
+    background-color: #EF0F0F;
+    border-radius: 25px;
+    /* font-family: 'Courier New', Courier, monospace; */
 }
 
 .header {
+    font-family: 'Great Vibes', Times, serif;
+    color: #D4AF37;
     display: flex;
     justify-content: center;
-    font-size: 100px;
+    font-size: 50px;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .slider {
@@ -60,4 +75,12 @@ body {
 #black {
     color: white;
     background-color: black;
+}
+
+.circle {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 1000px; 
+    margin: 0.5em;
 }
