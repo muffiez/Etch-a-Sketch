@@ -69,6 +69,8 @@ const clearBoard = () => {
 let colorPicked = document.getElementById('colorpicker');
 colorPicked.addEventListener('input', () => {
     currentColor = 'choice';
+    removeHighlight();
+    addHighlight(currentColor);
 });
 
 let gridLines = document.getElementById('gridLine');
@@ -94,6 +96,8 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
         const buttonId = e.target.id;
+        removeHighlight();
+        addHighlight(buttonId);
         if(buttonId == 'clear') {
             clearBoard();
         }
@@ -102,6 +106,17 @@ buttons.forEach((button) => {
         }
     });
 });
+
+const addHighlight = (buttonId) => {
+    document.getElementById(`${buttonId}`).setAttribute('style', 'border-width: 5px; border-color: #D4AF37; border-style: outset;');
+}
+
+const removeHighlight = () => {
+    document.getElementById('black').removeAttribute('style');
+    document.getElementById('rgb').removeAttribute('style');
+    document.getElementById('erase').removeAttribute('style');
+    document.getElementById('clear').removeAttribute('style');
+}
 
 window.onload = () => {
     setupGrid(DEFAULT_SIZE);

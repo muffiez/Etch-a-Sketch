@@ -1,8 +1,7 @@
 #controls {
     display: flex;
     align-items: center;
-    gap: 30px;
-    justify-content: space-evenly;
+    gap: 10px;
     margin-bottom: 20px;
     margin-top: 20px;
 }
@@ -22,20 +21,17 @@
     grid-template-rows: repeat(16, 1fr);
     height: 700px;
     width: 700px;
+    border-radius: 25px;
+    overflow: hidden
 }   
 
-/* #grid div {
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-} */
-
-
 body {
-    background-color: #00C0FF;
+    background-color: #EBE8E2;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #D4AF37;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #container {
@@ -43,10 +39,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 950px;
+    width: 900px;
     background-color: #EF0F0F;
     border-radius: 25px;
-    /* font-family: 'Courier New', Courier, monospace; */
+    border-style: outset;
+    border-width: 25px;
+    border-color: #EF0F0F
+    
 }
 
 .header {
@@ -81,3 +80,56 @@ body {
     border-radius: 1000px; 
     margin: 0.5em;
 }
+
+.toggle {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 32px;
+    height: 16px;
+    display: inline-block;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #707070;
+    transition: background-color ease 0.3s;
+  }
+  
+  .toggle:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    left: 1px;
+    top: 1px;
+    border-radius: 50%;
+    color: #fff;
+    text-shadow: -1px -1px rgba(0,0,0,0.15);
+    white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+  }
+  
+  .toggle:checked {
+    background-color: #4CD964;
+  }
+  
+  .toggle:checked:before {
+    left: 16px;
+  }
+
+  .switches, .choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
