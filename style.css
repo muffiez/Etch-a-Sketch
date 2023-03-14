@@ -105,7 +105,7 @@ body {
     transition: background-color ease 0.3s;
   }
   
-  .toggle:before {
+.toggle:before {
     content: "";
     display: block;
     position: absolute;
@@ -120,34 +120,38 @@ body {
     white-space: nowrap;
     box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
-  }
+}
   
   .toggle:checked {
     background-color: #D4AF37;
-  }
+}
   
-  .toggle:checked:before {
+.toggle:checked:before {
     left: 16px;
-  }
+}
 
-  .switches, .choice {
+.switches, .choice {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
+}
 
-  button {
+button {
     border-radius: 5px;
     font-family: 'Dancing Script', Impact, 'Arial Narrow Bold', sans-serif;
     font-weight: bold;
-  }
+}
 
 #sizeSlizer {
-  background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%);
+  display: flex;
+  background: #D4AF37;
   border: solid 1px #82CFD0;
   border-radius: 8px;
   height: 7px;
+  outline: none;
+  accent-color: #f5f250;
+  /* background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%); */
   width: 356px;
   outline: none;
   transition: background 450ms ease-in;

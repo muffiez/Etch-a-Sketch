@@ -101,8 +101,14 @@ buttons.forEach((button) => {
         const buttonId = e.target.id;
         removeHighlight();
         addHighlight(buttonId);
-        if(buttonId == 'clear') {
+        if(buttonId == 'clear' && currentColor == 'choice') {
             clearBoard();
+            removeHighlight();
+        }
+        else if(buttonId == 'clear') {
+            clearBoard();
+            removeHighlight();
+            addHighlight(currentColor);
         }
         else {
             currentColor = buttonId;
@@ -123,4 +129,5 @@ const removeHighlight = () => {
 
 window.onload = () => {
     setupGrid(DEFAULT_SIZE);
+    addHighlight('black');
 }
