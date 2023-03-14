@@ -153,14 +153,6 @@ body {
   transition: background 450ms ease-in;
 }
 
-/* .circle.left {
-    margin-right: 90px;
-}
-
-.circle.right {
-    margin-left: 90px;
-} */
-
 #bottom {
     display: flex;
     align-items: center;

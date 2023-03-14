@@ -72,7 +72,6 @@ let colorPicked = document.getElementById('colorpicker');
 colorPicked.addEventListener('input', () => {
     currentColor = 'choice';
     removeHighlight();
-    addHighlight(currentColor);
 });
 
 
